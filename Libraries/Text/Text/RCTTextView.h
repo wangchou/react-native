@@ -8,6 +8,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import <React/RCTPointerEvents.h>
 
 @interface RCTTextView : UIView
 
@@ -15,5 +16,6 @@
 @property (nonatomic, strong) NSTextStorage *textStorage;
 @property (nonatomic, assign) CGRect textFrame;
 @property (nonatomic, assign) BOOL selectable;
+@property (nonatomic, assign) RCTPointerEvents pointerEvents;
 
 @end
