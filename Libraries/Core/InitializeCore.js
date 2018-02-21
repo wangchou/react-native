@@ -1,10 +1,8 @@
 /**
  * Copyright (c) 2015-present, Facebook, Inc.
- * All rights reserved.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  *
  * @providesModule InitializeCore
  * @flow
@@ -56,7 +54,7 @@ if (!global.process.env.NODE_ENV) {
 // Setup the Systrace profiling hooks if necessary
 if (global.__RCTProfileIsProfiling) {
   const Systrace = require('Systrace');
-  Systrace.installReactHook(true);
+  Systrace.installReactHook();
   Systrace.setEnabled(true);
 }
 
@@ -197,9 +195,6 @@ if (__DEV__) {
 
     // Set up inspector
     const JSInspector = require('JSInspector');
-    /* $FlowFixMe(>=0.56.0 site=react_native_oss) This comment suppresses an
-     * error found when Flow v0.56 was deployed. To see the error delete this
-     * comment and run Flow. */
     /* $FlowFixMe(>=0.56.0 site=react_native_fb,react_native_oss) This comment
      * suppresses an error found when Flow v0.56 was deployed. To see the error
      * delete this comment and run Flow. */

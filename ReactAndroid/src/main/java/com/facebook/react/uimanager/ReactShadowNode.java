@@ -1,9 +1,8 @@
 /**
- * Copyright (c) 2015-present, Facebook, Inc. All rights reserved.
+ * Copyright (c) 2015-present, Facebook, Inc.
  *
- * <p>This source code is licensed under the BSD-style license found in the LICENSE file in the root
- * directory of this source tree. An additional grant of patent rights can be found in the PATENTS
- * file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 package com.facebook.react.uimanager;
 
@@ -68,6 +67,11 @@ public interface ReactShadowNode<T extends ReactShadowNode> {
    */
   boolean isYogaLeafNode();
 
+  /**
+   * @return a mutable copy of the {@link ReactShadowNode}
+   */
+  T mutableCopy();
+
   String getViewClass();
 
   boolean hasUpdates();
@@ -128,7 +132,10 @@ public interface ReactShadowNode<T extends ReactShadowNode> {
 
   T getRootNode();
 
+  @Deprecated() //Replaced by setRootTag method.
   void setRootNode(T rootNode);
+
+  void setRootTag(int rootTag);
 
   void setViewClassName(String viewClassName);
 
@@ -159,6 +166,8 @@ public interface ReactShadowNode<T extends ReactShadowNode> {
   void addNativeChildAt(T child, int nativeIndex);
 
   T removeNativeChildAt(int i);
+
+  void removeAllChildren();
 
   void removeAllNativeChildren();
 
