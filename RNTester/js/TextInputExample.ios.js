@@ -20,6 +20,26 @@ var {
   Switch,
 } = ReactNative;
 
+class MultilineSimpleCJKExample extends React.Component<$FlowFixMeProps, any> {
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
+  render() {
+    return (
+      <View >
+        <TextInput
+          multiline={true}
+          onChangeText={(text) => {
+            this.setState({text});
+          }}
+          style={{width: 300, height: 300}}
+          value={this.state.text}
+        />
+      </View>
+    );
+  }
+}
 class WithLabel extends React.Component<$FlowFixMeProps> {
   render() {
     return (
@@ -461,6 +481,12 @@ exports.displayName = (undefined: ?string);
 exports.title = '<TextInput>';
 exports.description = 'Single and multi-line text inputs.';
 exports.examples = [
+  {
+    title: 'CJK Multiline',
+    render: function () {
+      return <MultilineSimpleCJKExample />;
+    },
+  },
   {
     title: 'Auto-focus',
     render: function() {
