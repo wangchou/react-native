@@ -287,7 +287,7 @@ static void collectNonTextDescendants(RCTTextView *view, NSMutableArray *nonText
                                                       inTextContainer:textContainer
                              fractionOfDistanceBetweenInsertionPoints:&fraction];
 
-    NSArray *checkboxWords = [NSArray arrayWithObjects:@"\uE800", @"\uF1DB", nil];
+    NSArray *checkboxWords = [NSArray arrayWithObjects:@"\uE800", @"\uF1DB", @"\uE801", @"\uE802", nil];
     // If the point is not before (fraction == 0.0) the first character and not
     // after (fraction == 1.0) the last character, then the attribute is valid.
     if (_textStorage.length > 0 && (fraction > 0 || characterIndex > 0) && (fraction < 1 || characterIndex < _textStorage.length - 1)) {
